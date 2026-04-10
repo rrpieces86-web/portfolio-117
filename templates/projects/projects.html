@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    projects
+{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="container d-flex flex-row px-5 justify-content-center">
+    <h2>Projects</h2>
+    <div>
+        <!--- loop for all objects -->
+        <!--- all the cards -->
+        {% for project in projects %}
+        <div class="container d-flex flex-row px-5 justify-content-space between">
+            <div class="card" style="width: 18rem;">
+
+                <img src="{{project.image.url}}" class="card-image-top" alt="{{project.name}}">
+                <div class="card-body">
+                    
+                    <p class="card-title">{{project.name}}</p>
+                    <p class="card-text">{{project.description}}</p>
+                    <p class="card-text">{{project.year}}</p>
+                    <a class="btn btn-primary" src="{{project.repository}}" target="_blank" >
+                        {% for skill in project.skills.all %}
+                        <div>
+                            <label>{{skill.name}}</label>
+                        </div>
+                        {% endfor %}
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock content %}

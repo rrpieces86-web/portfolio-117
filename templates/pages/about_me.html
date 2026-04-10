@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{%  block title  %} About me {% endblock title %}
+
+{% block content %}
+<h1 class="justify-content-center">This is the about page</h1>
+
+<section class="container">
+    <div>
+
+        <div class="container d-flex justify-content-center">
+            <img src="{% static 'img/reece.jpg' %}" class="rounded-circle w-25" alt="my picture">
+            
+        </div>
+        
+        <p>Hello there my name is reece! im 39 years old and have started my development journey. On this site I have listed my experience, a little about me and the project I have started and finished. I want to personally thank you for viewing my page and look forward to the future!</p>
+        
+    </div>
+</section>
+{% endblock content %}
