@@ -6,9 +6,9 @@ Contact page
 
 {% block content %}
 
-<section>
+<section class="container">
     <h1>Contact Me</h1>
-    <form id="contactForm" method="POST">
+    <form class="d-grid gap-2 col-6 mx-auto" id="contactForm" method="POST">
         {% csrf_token %}
         {{form.as_p}}
         <div>
